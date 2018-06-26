@@ -28,8 +28,8 @@
       <a-assets>
         <!--<a-asset-item id="myModelObj" src="labyrinth.obj"></a-asset-item>
         <a-asset-item id="myModelMtl" src="labyrinth.mtl"></a-asset-item>-->
-        <!--<audio id="bowlSound" src="bowlb.wav">
-        <audio id="chantSound" src="namo3refuges.mp3">-->
+        <audio id="bowlSound" src="bowlb.wav">
+        <audio id="chantSound" src="namo3refuges.mp3">
 
         <a-mixin id="checkpoint"></a-mixin>
         <a-mixin id="checkpoint-hovered" color="pink"></a-mixin>
@@ -48,8 +48,9 @@
         </a-entity>
       </a-entity>
 </a-entity>
+<a-entity position="1 0 1">
 <a-sky color="black"></a-sky>
-<a-cylinder  checkpoint radius=".5" height="0.1" position="0 1 -1.5" color="orange" change-color="color:grey"></a-cylinder>
+<a-cylinder sound="src: #bowlSound; on:click; loop:true;" checkpoint radius=".5" height="0.1" position="0 1 -1.5" color="orange" change-color="color:grey"></a-cylinder>
 <a-cylinder checkpoint radius=".5" height="0.1" position="0 1 -2.5" color="orange" change-color="color:grey"></a-cylinder>
 <a-cylinder checkpoint radius=".5" height="0.1" position="0 1 -3.5" color="orange" change-color="color:grey"></a-cylinder>
 <a-cylinder checkpoint radius=".5" height="0.1" position="0 1 -4.5" color="orange" change-color="color:grey"></a-cylinder>
@@ -201,7 +202,7 @@
 <a-cylinder checkpoint radius=".5" height="0.1" position="2 1 -6.5" color="orange" change-color="color:grey"></a-cylinder>
 <a-cylinder checkpoint radius=".5" height="0.1" position="2 1 -7.5" color="orange" change-color="color:grey"></a-cylinder>
 
-<a-cylinder  checkpoint radius="2" height="0.1" position="1.5 1 -10" color="orange" change-color="color:grey"></a-cylinder>
+<a-cylinder sound="src: #chantSound; on:click;" checkpoint radius="2" height="0.1" position="1.5 1 -10" color="orange" change-color="color:grey"></a-cylinder>
 
     </a-scene>
   </body>
