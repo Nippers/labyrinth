@@ -3,13 +3,30 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <!--<script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>-->
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
-
   </head>
   <body>
+    <script>
+    AFRAME.registerComponent('change-color', {
+  schema: {
+    color: {default: 'orange'}
+  },
+  init: function(){
+    var data = this.data;
+    this.el.addEventListener('click', function(){
+      if(this.getAttribute('color')==='red'){
+        this.setAttribute('color', 'orange');
+      }else{
+        this.setAttribute('color', 'red');
+      }
+    })
+  }
+});
+    </script>
+
     <a-scene>
       <a-assets>
-        <a-asset-item id="myModelObj" src="labyrinth.obj"></a-asset-item>
-        <a-asset-item id="myModelMtl" src="labyrinth.mtl"></a-asset-item>
+        <!--<a-asset-item id="myModelObj" src="labyrinth.obj"></a-asset-item>
+        <a-asset-item id="myModelMtl" src="labyrinth.mtl"></a-asset-item>-->
         <audio id="bowlSound" src="bowlb.wav">
         <audio id="chantSound" src="namo3refuges.mp3">
 
@@ -188,23 +205,3 @@
     </a-scene>
   </body>
 </html>
-
-<script>
-AFRAME.registerComponent('change-color', {
-schema: {
-  color: {default: '#666'}
-},
-init: function(){
-  var data = this.data;
-  this.el.addEventListener('click', function(){
-    if(this.getAttribute('color')==="red"){
-      this.setAttribute('color', "orange");
-    }else{
-      this.setAttribute('color', "red");
-    }
-  })
-}
-});
-
-
-</script>
